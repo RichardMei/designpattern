@@ -6,7 +6,7 @@ import com.richard.strategy.MallardDuck;
 import com.richard.strategy.ModelDuck;
 import org.junit.Test;
 
-public class DuckTest {
+public class StrategyTest {
 
     @Test
     public void TestMallardDuck(){
