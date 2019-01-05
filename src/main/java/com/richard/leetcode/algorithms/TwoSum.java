@@ -40,9 +40,10 @@ public class TwoSum {
         for (int i = 0; i < numbs.length; i++) {
             int temp = target - numbs[i];
             if (hash.containsKey(temp) && hash.get(temp) != i) {
-                return new int[] {i, hash.get(temp)};
+                return new int[] {hash.get(temp), i};
+            } else {
+                hash.put(numbs[i], i);
             }
-            hash.put(numbs[i], i);
         }
         throw new IllegalArgumentException("No two sum solution");
     }
