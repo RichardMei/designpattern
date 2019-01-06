@@ -1,5 +1,8 @@
 package com.richard.leetcode.algorithms;
 
+/**
+ * https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/
+ */
 public class LongestSubstring {
     public static int lengthOfLongestSubstring(String s) {
         if ("".equals(s)) return 0;
