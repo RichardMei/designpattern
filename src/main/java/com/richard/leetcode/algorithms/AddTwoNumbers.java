@@ -120,6 +120,29 @@ public class AddTwoNumbers {
         return list.get(0);
     }
 
+    public static ListNode addTwoNumbers1(ListNode nodeOne, ListNode nodeTwo) {
+        ListNode pointOne = nodeOne;
+        ListNode pointTwo = nodeTwo;
+        ListNode head = new ListNode(0);
+        ListNode curr = head;
+        int mark = 0;
+
+        while (pointOne != null || pointTwo != null) {
+            int x = pointOne != null? pointOne.val : 0;
+            int y = pointTwo != null? pointTwo.val : 0;
+            int sum = x + y + mark;
+            mark = sum/10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+            if (pointOne != null) pointOne = pointOne.next;
+            if (pointTwo != null) pointTwo = pointTwo.next;
+        }
+
+        if (mark > 0) curr.next = new ListNode(mark);
+
+        return head.next;
+    }
+
     public static void main(String[] args) {
         ListNode one = new ListNode(2);
         one.next = new ListNode(4);
@@ -129,6 +152,6 @@ public class AddTwoNumbers {
         two.next = new ListNode(6);
         two.next.next = new ListNode(4);
 
-        addTwoNumbers(one, two);
+        addTwoNumbers1(one, two);
     }
 }
